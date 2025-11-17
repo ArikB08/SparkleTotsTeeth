@@ -60,15 +60,21 @@ struct UncertainView: View {
                 
                 Spacer()
                 
-                Button("                            DISCARD                            ", systemImage: "trash") {
+                Button {
                     showingDiscardAlert = true
+                } label: {
+                    HStack{
+                        Image(systemName: "trash")
+                        Text("DISCARD                                                         ")
+                            .bold()
+                            .font(.system(size: 20))
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
                 }
-                .frame(maxWidth: .infinity)
                 .buttonStyle(.borderedProminent)
                 .tint(.red)
                 .padding()
-                
-                
                 .alert("Are you sure?", isPresented: $showingDiscardAlert) {
                     Button("Cancel", role: .cancel) {
                         // notif disappears
@@ -77,10 +83,19 @@ struct UncertainView: View {
                         discard()
                     }
                 }
-                Button("                             DONE                                ", systemImage: "checkmark.circle") {
+                
+                Button {
                     showingDoneAlert = true
+                } label: {
+                    HStack{
+                        Image(systemName: "checkmark.circle")
+                        Text("DONE                                                          ")
+                            .bold()
+                            .font(.system(size: 20))
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
                 }
-                .frame(maxWidth: .infinity)
                 .buttonStyle(.borderedProminent)
                 .padding()
                 .alert("Are you sure?", isPresented: $showingDoneAlert) {
@@ -89,9 +104,24 @@ struct UncertainView: View {
                     }
                     Button("Submit", role: .none) {
                         submit()
-                        // submitted to database
-                    }
+                        }
                 }
+                
+//                Button("                             DONE                                ", systemImage: "checkmark.circle") {
+//                    showingDoneAlert = true
+//                }
+//                .frame(maxWidth: .infinity)
+//                .buttonStyle(.borderedProminent)
+//                .padding()
+//                .alert("Are you sure?", isPresented: $showingDoneAlert) {
+//                    Button("Cancel", role: .cancel) {
+//                        // notif disappears
+//                    }
+//                    Button("Submit", role: .none) {
+//                        submit()
+//                        // submitted to database
+//                    }
+//                }
             }
             }
         }
@@ -101,7 +131,7 @@ struct UncertainView: View {
     func submit() {
         print("submitted")
     }
-    }
+}
 
 #Preview {
     UncertainView()
