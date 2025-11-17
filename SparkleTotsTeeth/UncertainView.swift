@@ -25,7 +25,7 @@ struct UncertainView: View {
             Button("Cancel", role: .cancel) {
                 // notif disappears
             }
-            Button("Proceed", role: .destructive){
+            Button("Delete", role: .destructive){
                 print("discarded")
                 // discard logic
             }
