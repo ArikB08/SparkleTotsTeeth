@@ -12,14 +12,17 @@ struct UncertainView: View {
     
     var body: some View {
         VStack{
+            Spacer()
+            
             Button("Discard"){
                 showingAlert = true
             }
+            .buttonStyle(.bordered)
+            .padding()
         }
-        .buttonStyle(.bordered)
         .alert("Are you sure?", isPresented: $showingAlert) {
             Button("Cancel", role: .cancel) {
-                // i think the notif shld disappear
+                // notif disappears
             }
             Button("Proceed", role: .destructive){
                 print("discarded")
