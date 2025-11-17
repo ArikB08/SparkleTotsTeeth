@@ -75,6 +75,7 @@ struct UncertainView: View {
                 .buttonStyle(.borderedProminent)
                 .tint(.red)
                 .padding()
+                .opacity(0.9)
                 .alert("Are you sure?", isPresented: $showingDiscardAlert) {
                     Button("Cancel", role: .cancel) {
                         // notif disappears
@@ -98,6 +99,7 @@ struct UncertainView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .padding()
+                .opacity(0.9)
                 .alert("Are you sure?", isPresented: $showingDoneAlert) {
                     Button("Cancel", role: .cancel) {
                         // notif disappears
