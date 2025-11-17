@@ -14,10 +14,10 @@ struct LowTierView: View {
         VStack{
             Spacer()
             
-            Button("Done", systemImage: "checkmark.circle"){
+            Button("                             Done                               ", systemImage: "checkmark.circle"){
                 showingDoneAlert = true
             }
-            .buttonStyle(.bordered)
+            .buttonStyle(.borderedProminent)
             .alert("Are you sure?", isPresented: $showingDoneAlert) {
                 Button("Cancel", role: .cancel) {
                     // notif disappears
