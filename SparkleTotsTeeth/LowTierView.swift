@@ -14,7 +14,7 @@ struct LowTierView: View {
         VStack{
             Spacer()
             
-            Button("                             Done                               ", systemImage: "checkmark.circle"){
+            Button("                             DONE                               ", systemImage: "checkmark.circle"){
                 showingDoneAlert = true
             }
             .buttonStyle(.borderedProminent)
