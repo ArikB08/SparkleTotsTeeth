@@ -106,22 +106,6 @@ struct UncertainView: View {
                         submit()
                         }
                 }
-                
-//                Button("                             DONE                                ", systemImage: "checkmark.circle") {
-//                    showingDoneAlert = true
-//                }
-//                .frame(maxWidth: .infinity)
-//                .buttonStyle(.borderedProminent)
-//                .padding()
-//                .alert("Are you sure?", isPresented: $showingDoneAlert) {
-//                    Button("Cancel", role: .cancel) {
-//                        // notif disappears
-//                    }
-//                    Button("Submit", role: .none) {
-//                        submit()
-//                        // submitted to database
-//                    }
-//                }
             }
             }
         }
