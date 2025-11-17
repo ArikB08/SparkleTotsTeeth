@@ -20,33 +20,44 @@ struct UncertainView: View {
             
             Spacer()
             
-            Button("Discard", systemImage: "trash"){
+            Button("                            Discard                            ", systemImage: "trash"){
                 showingDiscardAlert = true
             }
-            .buttonStyle(.bordered)
+            .frame(maxWidth: .infinity)
+            .buttonStyle(.borderedProminent)
+            .tint(.red)
             .padding()
+            
         }
         .alert("Are you sure?", isPresented: $showingDiscardAlert) {
             Button("Cancel", role: .cancel) {
                 // notif disappears
             }
             Button("Delete", role: .destructive){
-                print("discarded")
-                // discard logic
+                discard()
             }
         }
-            Button("Done", systemImage: "checkmark.circle"){
+        Button("                             Done                               ", systemImage: "checkmark.circle"){
                 showingDoneAlert = true
             }
-            .buttonStyle(.bordered)
+            .buttonStyle(.borderedProminent)
             .alert("Are you sure?", isPresented: $showingDoneAlert) {
                 Button("Cancel", role: .cancel) {
                     // notif disappears
                 }
                 Button("Submit", role: .none) {
+                    submit()
                     // submitted to database
                 }
             }
+        }
+    
+    func submit() {
+        print("submitted")
+        }
+    
+    func discard() {
+        print("deleted")
         }
     }
     
