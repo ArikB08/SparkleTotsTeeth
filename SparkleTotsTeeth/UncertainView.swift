@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct UncertainView: View {
+    @State private var childName = ""
     @State private var showingDiscardAlert = false
     @State private var showingDoneAlert = false
     
@@ -38,7 +39,7 @@ struct UncertainView: View {
                 Button("Cancel", role: .cancel) {
                     // notif disappears
                 }
-                Button("Submit", role: .destructive) {
+                Button("Submit", role: .none) {
                     // submitted to database
                 }
             }
