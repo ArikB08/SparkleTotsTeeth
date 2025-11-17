@@ -8,28 +8,43 @@
 import SwiftUI
 
 struct UncertainView: View {
-    @State private var showingAlert = false
+    @State private var showingDiscardAlert = false
+    @State private var showingDoneAlert = false
     
     var body: some View {
         VStack{
             Spacer()
             
-            Button("Discard"){
-                showingAlert = true
+            Button("Discard", systemImage: "trash"){
+                showingDiscardAlert = true
             }
             .buttonStyle(.bordered)
             .padding()
         }
-        .alert("Are you sure?", isPresented: $showingAlert) {
+        .alert("Are you sure?", isPresented: $showingDiscardAlert) {
             Button("Cancel", role: .cancel) {
                 // notif disappears
             }
             Button("Proceed", role: .destructive){
                 print("discarded")
+                // discard logic
+            }
+        }
+            Button("Done", systemImage: "checkmark.circle"){
+                showingDoneAlert = true
+            }
+            .buttonStyle(.bordered)
+            .alert("Are you sure?", isPresented: $showingDoneAlert) {
+                Button("Cancel", role: .cancel) {
+                    // notif disappears
+                }
+                Button("Submit", role: .destructive) {
+                    // submitted to database
+                }
             }
         }
     }
-}
+    
 
 #Preview {
     UncertainView()
