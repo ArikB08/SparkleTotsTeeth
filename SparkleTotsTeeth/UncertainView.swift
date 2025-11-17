@@ -14,6 +14,10 @@ struct UncertainView: View {
     
     var body: some View {
         VStack{
+            TextField("Enter Child's full name", text: $childName)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
             Spacer()
             
             Button("Discard", systemImage: "trash"){
